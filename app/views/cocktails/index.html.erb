@@ -1,0 +1,17 @@
+<h1>Cocktails#index</h1>
+<p>ici on liste tout le bordel</p>
+
+<ul>
+<% @cocktails.each do |cocktail| %>
+<li>
+<%= cocktail.name %>
+<%= link_to 'Voir', cocktail_path(cocktail) %>
+<%= link_to 'Virer',
+              cocktail_path(cocktail),
+              method: :delete,
+              data: { confirm: "Are you sure?" }%>
+</li>
+<% end %>
+</ul>
+
+<%= link_to 'add your poison', new_cocktail_path %>
