@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'cocktails#index'
   get 'cocktails', to:'cocktails#index', as:'cocktails'
   post 'cocktails', to:'cocktails#create'
   get 'cocktails/new', to:'cocktails#new', as:'new_cocktail'

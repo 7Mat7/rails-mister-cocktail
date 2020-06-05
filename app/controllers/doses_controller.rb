@@ -1,13 +1,4 @@
 class DosesController < ApplicationController
-
-  @ingredients = []
-  liste = Ingredient.all
-  puts "=============================================================="
-  liste.each do |ingredient|
-    @ingredients << ingredient.name
-
-  end
-    puts @ingredients
   def new
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new

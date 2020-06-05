@@ -1,17 +1,22 @@
-<h1>Cocktails#index</h1>
-<p>ici on liste tout le bordel</p>
+<div class="container">
+<p>Découvrez notre collection de tords-boyaux</p>
 
 <ul>
 <% @cocktails.each do |cocktail| %>
 <li>
-<%= cocktail.name %>
-<%= link_to 'Voir', cocktail_path(cocktail) %>
-<%= link_to 'Virer',
+  <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+      <h2><%= cocktail.name %></h2>
+      <p><%= link_to 'Voir', cocktail_path(cocktail) %> <%= link_to 'Virer',
               cocktail_path(cocktail),
               method: :delete,
-              data: { confirm: "Are you sure?" }%>
+              data: { confirm: "Are you sure?" }%></p>
+    </div>
+  </div>
 </li>
 <% end %>
 </ul>
 
 <%= link_to 'add your poison', new_cocktail_path %>
+</div>
